@@ -14,14 +14,24 @@ export const fetchData = async () => {
     //   lastUpdate: data.lastUpdate,
     // };
     //* re destructuring the data object from response
+    // const {
+    //   data: { confirmed, recovered, deaths, lastUpdate },
+    // } = await axios.get(url);
+    // const modifiedData = {
+    //   confirmed: confirmed,
+    //   recovered: recovered,
+    //   deaths: deaths,
+    //   lastUpdate: lastUpdate,
+    // };
+//* as both the key and values have the same name in object we can directly do  as below instead of the above format
     const {
       data: { confirmed, recovered, deaths, lastUpdate },
     } = await axios.get(url);
     const modifiedData = {
-      confirmed: confirmed,
-      recovered: recovered,
-      deaths: deaths,
-      lastUpdate: lastUpdate,
+      confirmed,
+      recovered,
+      deaths,
+      lastUpdate,
     };
     return modifiedData;
   } catch (error) {}
