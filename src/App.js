@@ -1,15 +1,19 @@
-import "./App.css";
 import { Cards, Chart, CountryPicker } from "./components";
+import styles from "./App.module.css";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Corona Tracker using Javascript Mystery</h1>
-      <Cards></Cards>
-      <CountryPicker></CountryPicker>
-      <Chart></Chart>
-    </div>
-  );
+import React, { Component } from "react";
+
+export class App extends Component {
+  render() {
+    return (
+      <div className={styles.container}>
+        {/* <h1>Corona Tracker using Javascript Mystery</h1> */}
+        <Cards></Cards>
+        <CountryPicker></CountryPicker>
+        <Chart></Chart>
+      </div>
+    );
+  }
 }
 
 export default App;
