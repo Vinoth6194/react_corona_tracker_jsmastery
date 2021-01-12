@@ -33,6 +33,7 @@ export const fetchData = async () => {
     //   deaths,
     //   lastUpdate,
     // };
+    //* return the obj directly instead of assigning to the variable
     const {
       data: { confirmed, recovered, deaths, lastUpdate },
     } = await axios.get(url);
