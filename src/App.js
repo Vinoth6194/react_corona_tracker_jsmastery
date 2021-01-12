@@ -1,7 +1,5 @@
 import "./App.css";
-import Cards from "./components/Cards/Cards";
-import CountryPicker from "./components/CountryPicker/CountryPicker";
-import Chart from "./components/Chart/Chart";
+import { Cards, Chart, CountryPicker } from "./components";
 
 function App() {
   return (
