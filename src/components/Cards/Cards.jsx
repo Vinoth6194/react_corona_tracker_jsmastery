@@ -2,9 +2,14 @@ import { Card, CardContent, Grid, Typography } from "@material-ui/core";
 import React from "react";
 import styles from "./Cards.module.css";
 
-function Cards(props) {
+const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   console.log("From Cards");
-  console.log(props.data);
+  //console.log(props.data);
+  //   console.log(confirmed.value);
+  if (!confirmed) {
+    return "loading";
+  }
+  console.log(confirmed.value);
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
@@ -14,7 +19,7 @@ function Cards(props) {
             <Typography gutterBottom color="textSecondary">
               Infected
             </Typography>
-            <Typography variant="h5">Real Data</Typography>
+            <Typography variant="h5">{confirmed.value}</Typography>
             <Typography color="textSecondary">Real Date</Typography>
             <Typography variant="body2">
               Number of active COVID19 cases
@@ -53,6 +58,6 @@ function Cards(props) {
       </Grid>
     </div>
   );
-}
+};
 
 export default Cards;
