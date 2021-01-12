@@ -23,16 +23,19 @@ export const fetchData = async () => {
     //   deaths: deaths,
     //   lastUpdate: lastUpdate,
     // };
-//* as both the key and values have the same name in object we can directly do  as below instead of the above format
+    //* as both the key and values have the same name in object we can directly do  as below instead of the above format
+    // const {
+    //   data: { confirmed, recovered, deaths, lastUpdate },
+    // } = await axios.get(url);
+    // const modifiedData = {
+    //   confirmed,
+    //   recovered,
+    //   deaths,
+    //   lastUpdate,
+    // };
     const {
       data: { confirmed, recovered, deaths, lastUpdate },
     } = await axios.get(url);
-    const modifiedData = {
-      confirmed,
-      recovered,
-      deaths,
-      lastUpdate,
-    };
-    return modifiedData;
+    return { confirmed, recovered, deaths, lastUpdate };
   } catch (error) {}
 };
