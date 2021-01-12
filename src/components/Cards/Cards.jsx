@@ -9,7 +9,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
     return "loading";
   }
-  console.log(confirmed.value);
+  console.log("Confirmed Cases ✔✔✔✔✔✔" + confirmed.value);
+  console.log("Recovered Cases ✔✔✔✔✔✔" + recovered.value);
+  console.log("Deaths Cases ✔✔✔✔✔✔" + deaths.value);
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
@@ -42,8 +44,17 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography gutterBottom color="textSecondary">
               Recovered
             </Typography>
-            <Typography variant="h5">Real Data</Typography>
-            <Typography color="textSecondary">Real Date</Typography>
+            <Typography variant="h5">
+              <CounterUp
+                start={0}
+                end={recovered.value}
+                duration={2.5}
+                separator={","}
+              />
+            </Typography>
+            <Typography color="textSecondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>{" "}
             <Typography variant="body2">
               Number of recoveries from COVID19
             </Typography>
@@ -56,8 +67,17 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography gutterBottom color="textSecondary">
               Deaths
             </Typography>
-            <Typography variant="h5">Real Data</Typography>
-            <Typography color="textSecondary">Real Date</Typography>
+            <Typography variant="h5">
+              <CounterUp
+                start={0}
+                end={deaths.value}
+                duration={2.5}
+                separator={","}
+              />
+            </Typography>{" "}
+            <Typography color="textSecondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
             <Typography variant="body2">
               Number of deaths caused due to COVID19
             </Typography>
