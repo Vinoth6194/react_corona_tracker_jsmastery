@@ -11,19 +11,19 @@ function Cards(props) {
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
-        <Grid item>
-          <Card>
-            <CardContent>
-              <Typography color="textSecondary" guttterBottom>
-                Infected
-              </Typography>
-              <Typography variant="h5">Real Data</Typography>
-              <Typography color="textSecondary">Real Date</Typography>
-              <Typography variant="body2">
-                Number of active case of COVID-19
-              </Typography>
-            </CardContent>
-          </Card>
+        <Grid item component={Card}>
+          {/* <Card> */}
+          <CardContent>
+            <Typography color="textSecondary" guttterBottom>
+              Infected
+            </Typography>
+            <Typography variant="h5">Real Data</Typography>
+            <Typography color="textSecondary">Real Date</Typography>
+            <Typography variant="body2">
+              Number of active case of COVID-19
+            </Typography>
+          </CardContent>
+          {/* </Card> */}
         </Grid>
       </Grid>
     </div>
