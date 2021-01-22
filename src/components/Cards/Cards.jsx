@@ -30,7 +30,9 @@ function Cards({ data: { confirmed, recoveries, deaths, lastUpdate } }) {
                 separator=","
               ></CountUp>
             </Typography>
-            <Typography color="textSecondary">Real Date</Typography>
+            <Typography color="textSecondary">
+              {new Date(lastUpdate).toDateString()}
+            </Typography>
             <Typography variant="body2">
               Number of active case of COVID-19
             </Typography>
