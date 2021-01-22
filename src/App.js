@@ -22,7 +22,7 @@ export class App extends Component {
     console.log(fetchedData);
   };
   render() {
-    const { data } = this.state;
+    const { data, country } = this.state;
     return (
       <div className={styles.container}>
         {/* <h1>Corona Tracker using Javascript Mystery</h1> */}
@@ -30,7 +30,7 @@ export class App extends Component {
         <CountryPicker
           handleCountryChange={this.handleCountryChange}
         ></CountryPicker>
-        <Chart></Chart>
+        <Chart data={data} country={country}></Chart>
       </div>
     );
   }
