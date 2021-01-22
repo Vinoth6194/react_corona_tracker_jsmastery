@@ -8,7 +8,9 @@ function CountryPicker() {
     };
     fetchCountriesApi();
     // console.log("Countries api", +fetchedCountries);
-  }, []);
+  }, [setFetchedCountries]);
+  console.log(fetchedCountries.join("**"));
+  console.log(fetchedCountries);
 
   return <div>()</div>;
 }
