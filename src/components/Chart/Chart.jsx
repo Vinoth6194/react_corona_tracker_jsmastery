@@ -11,7 +11,14 @@ function Chart() {
     fetchDailyApi();
     console.log("Dailydata ----" + dailyData);
   }, []);
-
+  // const lineChart = dailyData[0] ? (
+  //   <Line
+  //     data={{
+  //       labels: "",
+  //       datasets: [{}, {}],
+  //     }}
+  //   />
+  // ) : null;
   return <div>Chart</div>;
 }
 
