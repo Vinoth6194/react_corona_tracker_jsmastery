@@ -4,10 +4,11 @@ import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import CountUp from "react-countup";
 
 function Cards({ data: { confirmed, recoveries, deaths, lastUpdate } }) {
   console.log("From Cards");
-  console.log("Confirmed Cases ✔✔✔✔✔✔✔ " + confirmed.value);
+  // console.log("Confirmed Cases ✔✔✔✔✔✔✔ " + confirmed.value);
   //console.log(props.data);
   if (!confirmed) {
     return "Loading...";
@@ -21,7 +22,14 @@ function Cards({ data: { confirmed, recoveries, deaths, lastUpdate } }) {
             <Typography color="textSecondary" gutterBottom>
               Infected
             </Typography>
-            <Typography variant="h5">{confirmed.value}</Typography>
+            <Typography variant="h5">
+              <CountUp
+                start={0}
+                end={confirmed.value}
+                duration={2.5}
+                separator=","
+              ></CountUp>
+            </Typography>
             <Typography color="textSecondary">Real Date</Typography>
             <Typography variant="body2">
               Number of active case of COVID-19
