@@ -7,7 +7,7 @@ function CountryPicker() {
       setFetchedCountries(await countriesApi());
     };
     fetchCountriesApi();
-    console.log("Countries api", +fetchedCountries);
+    // console.log("Countries api", +fetchedCountries);
   }, []);
 
   return <div>()</div>;
