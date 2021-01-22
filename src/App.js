@@ -1,6 +1,6 @@
 import { Cards, Chart, CountryPicker } from "./components";
 import styles from "./App.module.css";
-
+import coronaImage from "./images/covid19.png";
 import React, { Component } from "react";
 import { fetchData } from "./api";
 export class App extends Component {
@@ -25,6 +25,7 @@ export class App extends Component {
     const { data, country } = this.state;
     return (
       <div className={styles.container}>
+        <img src={coronaImage} className={styles.image} alt="COVID-19" />
         {/* <h1>Corona Tracker using Javascript Mystery</h1> */}
         <Cards data={data}></Cards>
         <CountryPicker

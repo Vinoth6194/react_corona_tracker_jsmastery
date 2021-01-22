@@ -16,7 +16,7 @@ function CountryPicker({ handleCountryChange }) {
   console.log(fetchedCountries);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.formControl}>
       <FormControl>
         <NativeSelect
           defaultValue=""

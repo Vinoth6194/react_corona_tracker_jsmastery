@@ -8,3 +8,7 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+.image {
+  width: 376px;
+  margin-top: 50px;
+}
