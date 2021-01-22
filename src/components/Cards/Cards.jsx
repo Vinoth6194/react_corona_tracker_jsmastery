@@ -25,6 +25,34 @@ function Cards(props) {
           </CardContent>
           {/* </Card> */}
         </Grid>
+        <Grid item component={Card}>
+          {/* <Card> */}
+          <CardContent>
+            <Typography color="textSecondary" guttterBottom>
+              Recovered
+            </Typography>
+            <Typography variant="h5">Real Data</Typography>
+            <Typography color="textSecondary">Real Date</Typography>
+            <Typography variant="body2">
+              Number of recovered case of COVID-19
+            </Typography>
+          </CardContent>
+          {/* </Card> */}
+        </Grid>
+        <Grid item component={Card}>
+          {/* <Card> */}
+          <CardContent>
+            <Typography color="textSecondary" guttterBottom>
+              Deaths
+            </Typography>
+            <Typography variant="h5">Real Data</Typography>
+            <Typography color="textSecondary">Real Date</Typography>
+            <Typography variant="body2">
+              Number of deaths due to COVID-19
+            </Typography>
+          </CardContent>
+          {/* </Card> */}
+        </Grid>
       </Grid>
     </div>
   );
