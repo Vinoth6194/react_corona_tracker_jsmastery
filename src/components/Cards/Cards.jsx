@@ -5,19 +5,23 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
-function Cards(props) {
+function Cards({ data: { confirmed, recoveries, deaths, lastUpdate } }) {
   console.log("From Cards");
-  console.log(props.data);
+  console.log("Confirmed Cases ✔✔✔✔✔✔✔ " + confirmed.value);
+  //console.log(props.data);
+  if (!confirmed) {
+    return "Loading...";
+  }
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="center">
         <Grid item component={Card}>
           {/* <Card> */}
           <CardContent>
-            <Typography color="textSecondary" guttterBottom>
+            <Typography color="textSecondary" gutterBottom>
               Infected
             </Typography>
-            <Typography variant="h5">Real Data</Typography>
+            <Typography variant="h5">{confirmed.value}</Typography>
             <Typography color="textSecondary">Real Date</Typography>
             <Typography variant="body2">
               Number of active case of COVID-19
@@ -28,7 +32,7 @@ function Cards(props) {
         <Grid item component={Card}>
           {/* <Card> */}
           <CardContent>
-            <Typography color="textSecondary" guttterBottom>
+            <Typography color="textSecondary" gutterBottom>
               Recovered
             </Typography>
             <Typography variant="h5">Real Data</Typography>
@@ -42,7 +46,7 @@ function Cards(props) {
         <Grid item component={Card}>
           {/* <Card> */}
           <CardContent>
-            <Typography color="textSecondary" guttterBottom>
+            <Typography color="textSecondary" gutterBottom>
               Deaths
             </Typography>
             <Typography variant="h5">Real Data</Typography>
